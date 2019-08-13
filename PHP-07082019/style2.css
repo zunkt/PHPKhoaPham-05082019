@@ -1,0 +1,193 @@
+body {
+    margin: 0;
+}
+
+.wrapper {
+    padding: 0 15%;
+    background-image: url('Exercise/HeaderBackground.png');
+}
+header {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ul-1 {
+    height: 60px;
+    margin: 0;
+}
+
+.li-1 {
+    float: left;
+    list-style: none;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    /* border-left: gray 1px solid;
+    border-right: rgb(39, 39, 59) 2px solid; */
+    border-left: 0.05px solid gray;
+    border-right: 0.05px solid rgb(56, 56, 56);
+    color:white;
+    position: relative;
+}
+
+.li-1:last-child {
+    border-right: gray 1px solid;
+}
+.li-1:hover > a{
+    color: red;
+}
+
+.li-1:hover .ul-2 {
+    display: block;
+    
+}
+
+.ul-2 {
+    background-color: rgba(56, 56, 56, 0.5);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 0;
+    display: none;
+    z-index: 10;
+}
+
+.li-2 {
+    list-style-type: none;
+    padding: 0 10px;
+    border-bottom: 1px black solid;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+}
+
+.active {
+    background-image: url('Exercise/BorderMenu.png');
+    background-size: 100% 100%;
+}
+
+.wrapper-content {
+    padding: 30px 15%;
+    background-image: url('Exercise/PageBackground.png');
+    min-height: 100vh;
+}
+
+.slide {
+    background-color: orange;
+    height: 200px;
+    padding: 40px;
+    color: white;
+    position: relative;
+    border-bottom: 10px solid black;
+    margin-bottom: 50px;
+}
+
+.slide .content {
+    width: 70%;
+    float: left;
+}
+
+.slide .chart {
+    width: 30%;
+    float: left;
+}
+
+.slide .chart img {
+    width: 100%;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+.left {
+    position: absolute;
+    left: 0;
+    color: white;
+    background-color: black;
+    width: 30px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    text-align: center;
+    top: 50%;
+    margin-top: -25px;
+}
+
+.right {
+    position: absolute;
+    right: 0;
+    color: white;
+    background-color: black;
+    width: 30px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    text-align: center;
+    top: 50%;
+    margin-top: -25px;
+}
+
+.loading {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    
+}
+
+.loading img {
+    animation: loading 2s linear infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.slide .nav {
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    background-color: black;
+    padding: 5px;
+    font-size: 8px;
+    color: gray;
+}
+
+.slide .nav i {
+    padding: 0 2px;
+}
+
+.slide .active  {
+    color: white;
+}
+
+hr {
+    border-color: gray;
+}
+
+.wrapper-box .box {
+    width: 33.33%;
+    float: left;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.box .box-img {
+    float: left;
+    width: 30%;
+}
+
+.box .box-content {
+    float: left;
+    width: 70%;
+    color: white;
+}
