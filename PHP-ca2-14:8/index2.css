@@ -1,0 +1,126 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.page-wrap{
+    background-color: rgb(70, 159, 188);
+    width: 100%;
+    min-height: 100vh;
+}
+.conduct-content{
+    width: 90%;
+    height: 200px;
+    padding: 30px;
+    margin: auto;
+    text-align: center;
+    line-height: 45px;
+}
+.conduct-content h1{
+    font-size: 60px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}
+#guide-1{
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(248, 200, 60);
+}
+#guide-2{
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(123, 219, 124);
+}
+#guide-3{
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(39, 93, 102);
+}
+.content{
+    width: 90%;
+    height: auto;
+    margin: auto;
+}
+.content .add-content{
+    width: 90%;
+    height: 50px;
+    margin: auto;
+}
+.add-content input{
+    width: 80%;
+    height: 30px;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 20px;
+    float: left;
+}
+.add-content a i{
+    width: 40px;
+    height: 50px;
+    font-size: 50px;
+    margin: -2px 5px;
+    color: rgb(39, 93, 110);
+}
+.list-content{
+    width: 90%;
+    height: auto;
+    /* margin: 20px auto; */
+    padding: 20px 0;
+}
+.content-item{
+    width: 80%;
+    margin: auto;
+    border: 2px solid rgb(68, 67, 67);
+    border-radius: 5px;
+    padding: 5px;
+    display: table;
+    background-color: rgb(106, 183, 202);
+    position: relative;
+    margin-bottom: 20px;
+}
+.content-item:last-child {
+  margin-bottom: 0;
+}
+.text-input{
+    width: 95%;
+    float: left;
+    display: flex;
+    text-align: center;
+    justify-content: center; 
+    display: table-row;
+
+}
+.text-input p{
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif;
+    word-spacing:1px;
+    line-height: 25px;
+    text-align: center;
+    display: flex;
+    text-align: center;
+    justify-content: center; 
+}
+.close{
+    width: 5%;
+    float: left;
+    height: 18px;
+    margin-top: -10px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    display: table-row;
+}
+.bt-cls{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.bt-cls i{
+    position: absolute;
+    right: 50%;
+    color: rgb(39, 93, 110);
+    font-size: 20px;
+}
