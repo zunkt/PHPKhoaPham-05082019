@@ -1,17 +1,7 @@
 <?php
+    require('db.php');
+    require('get_data.php');
 
-$con = mysqli_connect('localhost', 'root', '', 'QLSV');
-mysqli_set_charset($con, 'utf8');
-if (!$con) {
-    die('Error connect');
-}
-$queryString = "SELECT * FROM tasks";
-$result = mysqli_query($con, $queryString);
-
-while ($row = mysqli_fetch_assoc($result)) {
-    $task[] = $row;
-}
-$task = array();
 ?>
 
 <!DOCTYPE html>
@@ -109,7 +99,7 @@ $task = array();
   margin-bottom: 0;
 }
 .text-input{
-    width: 95%;
+    width: 50%;
     float: left;
     display: flex;
     text-align: center;
@@ -139,16 +129,27 @@ $task = array();
     right: 0;
     display: table-row;
 }
-.bt-cls{
+.close .bt-cls{
     width: 100%;
     height: 100%;
     position: relative;
 }
-.bt-cls i{
-    position: absolute;
+.close .bt-cls i{
     right: 50%;
     color: rgb(39, 93, 110);
     font-size: 20px;
+}
+#bt-add {
+    width: 50px;
+    height: 40px;
+    font-size: 30px;
+}
+.close #bt-remove {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    position: relative;
+    top: -5px;
 }
     </style>
 </head>
@@ -160,10 +161,19 @@ $task = array();
             <p id="guide-2">Click the item to mark it as complete.</p>
             <p id="guide-3">Click the "X" to remove the item from your list.</p>
         </div>
+        <div>
+            <?php
+                if (isset($error)) {
+                    echo "<b>$error</b>";
+                }
+            ?>
+        </div>
         <div class="content">
             <div class="add-content">
-                <input type="text" name="" id="txt-value" placeholder="New Item...">
-                <a href="#" id="bt-add"><i class="fas fa-pen-square"></i></a>
+                <form method="post" action="handle_form.php">
+                    <input type="text" name="txtTask" id="txt-value" placeholder="New Item...">
+                    <button name="btnInsert" type="submit" id="bt-add"><i class="fas fa-pen-square"></i></button>
+                </form>
             </div>
             
         </div>
@@ -172,12 +182,25 @@ $task = array();
                 ?>
                     <div class="list-content">
                 <div class="content-item">
-                    <div class="text-input">
-                        <p><?php echo $item['name'] ?></p>
+                    <form action="handle_form.php" method="POST">
+                        <input class="text-input" name="txtTaskUpdate" value="<?php echo $item['name'] ?>">
+                        <div>
+                        <div class="bt-cls">
+                                <input type="hidden" name="taskId" value="<?php echo $item['id'] ?>"/>
+                                <button type="submit" name="btnUpdate" id="bt-remove">Update</button>
+                        </div>
                     </div>
+                    </form>
                     <div class="close">
-                        <div class="bt-cls"><a href="#" id="bt-remove"><i class="fas fa-times"></i></a></div>
+                        <div class="bt-cls">
+                            <form action="handle_form.php" method="POST">
+                                <input type="hidden" name="taskId" value="<?php echo $item['id'] ?>"/>
+                                <button type="submit" name="btnDelete" id="bt-remove"><i class="fas fa-times"></i></button>
+                            </form>
+                        </div>
                     </div>
+                    
+                    
                 </div>
             </div>
                 <?php
